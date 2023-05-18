@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css'
+import Players from '../Players/Players';
 const Home = () => {
     const [players, setPlayers] = useState([]);
     const [search, setSearch] = useState('')
@@ -18,6 +19,9 @@ const Home = () => {
             <div className="left-side">
                 {<input onChange={event => setSearch(event.target.value)} type="text" className='search-input' />}
                 <button className='btn-search'>Search</button>
+                <div className="players-container">
+                    <Players players={players}></Players>
+                </div>
             </div>
 
             <div className="right-side">
