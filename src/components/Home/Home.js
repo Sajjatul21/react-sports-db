@@ -5,12 +5,12 @@ const Home = () => {
     const [search, setSearch] = useState('')
     // console.log(search);
     useEffect(() => {
-        fetch(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=Danny%20Welbeck`)
+        fetch(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=${search}`)
             .then(res => res.json())
             .then(data => setPlayers(data?.player))
 
-    }, []);
-    console.log(players)
+    }, [search]);
+    console.log(players);
 
 
     return (
