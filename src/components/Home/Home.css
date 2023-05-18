@@ -1,0 +1,26 @@
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5px;
+}
+
+.search-input {
+    padding: 15px;
+    width: 50%;
+}
+
+.btn-search {
+    font-weight: 600;
+    padding: 16px 18px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+
+.cart {
+    border: 1px solid gray;
+    box-shadow: 4px 4px 8px gray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
