@@ -31,24 +31,25 @@ const SinglePlayers = ({ player, cart, setCart }) => {
         };
         const previousBookmark = localStorage.getItem('bookmark');
         const oldBookmark = JSON.parse(previousBookmark);
+        console.log(oldBookmark);
         // console.log(idPlayer)
-        if (oldBookmark) {
-            const isExist = oldBookmark.find(p => p.idPlayer === idPlayer);
-            if (isExist) {
-                const updatedQuantity = parseFloat(isExist.quantity);
-                const newUpdatedQuantity = updatedQuantity + 1;
-                isExist.quantity = newUpdatedQuantity;
-                // console.log(oldBookmark);
-
-                localStorage.setItem('bookmark', JSON.stringify(oldBookmark));
-                return;
-            }
-
-        }
-        else {
-            localStorage.setItem('bookmark', JSON.stringify([info]));
-
-        }
+        /*  if (oldBookmark) {
+             const isExist = oldBookmark.find(p => p.idPlayer === idPlayer);
+             if (isExist) {
+                 const updatedQuantity = parseFloat(isExist.quantity);
+                 const newUpdatedQuantity = updatedQuantity + 1;
+                 isExist.quantity = newUpdatedQuantity;
+                 // console.log(oldBookmark);
+ 
+                 localStorage.setItem('bookmark', JSON.stringify(oldBookmark));
+                 return;
+             }
+ 
+         }
+         else {
+             localStorage.setItem('bookmark', JSON.stringify([info]));
+ 
+         } */
     };
 
 
