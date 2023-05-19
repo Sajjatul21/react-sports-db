@@ -24,3 +24,18 @@
     padding: 10px;
     margin-right: 10px;
 }
+
+.cart-info-container {
+    display: flex;
+    justify-content: center;
+}
+
+.delete-btn {
+    margin-left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 5px;
+
+}

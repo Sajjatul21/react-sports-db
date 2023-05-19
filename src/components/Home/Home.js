@@ -28,7 +28,12 @@ const Home = () => {
                 <div className="cart">
                     <p>This is player Cart</p>
                     {
-                        cart.map(p => <li>{p.idPlayer}</li>)
+                        cart.map(p => (
+                            <div className='cart-info-container'>
+                                <li>{p.strPlayer}</li>
+                                <button className='delete-btn'>Delete</button>
+                            </div>
+                        ))
                     }
 
                 </div>
