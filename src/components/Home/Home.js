@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css'
 import Players from '../Players/Players';
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const Home = () => {
     const [players, setPlayers] = useState([]);
@@ -10,9 +11,14 @@ const Home = () => {
 
     const handleDelete = (id) => {
         const leftPlayer = cart.filter(pId => pId.idPlayer !== id);
-        toast('wow button is delete');
         setCart(leftPlayer);
+        // toast('wow button is delete');
         // console.log(leftPlayer);
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+        )
     }
 
     useEffect(() => {
@@ -41,7 +47,7 @@ const Home = () => {
                             <div className='cart-info-container'>
                                 <li>{p.strPlayer}</li>
                                 <button onClick={() => handleDelete(p.idPlayer)} className='delete-btn'>Delete</button>
-                                <ToastContainer />
+                                {/* <ToastContainer /> */}
                             </div>
                         ))
                     }
