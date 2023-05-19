@@ -36,15 +36,14 @@ const SinglePlayers = ({ player, cart, setCart }) => {
             const isExist = oldBookmark.find(p => p.idPlayer === idPlayer);
             if (isExist) {
                 const updatedQuantity = parseFloat(isExist.quantity);
-                // console.log(updatedQuantity);
                 const newUpdatedQuantity = updatedQuantity + 1;
-                // console.log(newUpdatedPrice);
                 isExist.quantity = newUpdatedQuantity;
-                console.log(isExist);
+                // console.log(oldBookmark);
+
+                localStorage.setItem('bookmark', JSON.stringify(oldBookmark));
                 return;
             }
 
-            localStorage.setItem('bookmark', JSON.stringify([...oldBookmark, info]));
         }
         else {
             localStorage.setItem('bookmark', JSON.stringify([info]));
