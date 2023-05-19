@@ -1,7 +1,7 @@
 import React from 'react';
 import './SinglePlayers.css';
 const SinglePlayers = ({ player, cart, setCart }) => {
-    const { strNationality, strPlayer, idPlayer, strDescriptionEN, strCutout } = player;
+    const { strPlayer, idPlayer, strDescriptionEN, strCutout } = player;
     const handleAddToCart = () => {
         const info = {
             idPlayer,
@@ -26,7 +26,7 @@ const SinglePlayers = ({ player, cart, setCart }) => {
             strPlayer,
             strDescriptionEN,
             strCutout,
-            price: 115,
+            quantity: 1,
             bookMark: "true"
         };
         const previousBookmark = localStorage.getItem('bookmark');
@@ -35,7 +35,12 @@ const SinglePlayers = ({ player, cart, setCart }) => {
         if (oldBookmark) {
             const isExist = oldBookmark.find(p => p.idPlayer === idPlayer);
             if (isExist) {
-                alert("Already bookmarded");
+                const updatedQuantity = parseFloat(isExist.quantity);
+                // console.log(updatedQuantity);
+                const newUpdatedQuantity = updatedQuantity + 1;
+                // console.log(newUpdatedPrice);
+                isExist.quantity = newUpdatedQuantity;
+                console.log(isExist);
                 return;
             }
 
