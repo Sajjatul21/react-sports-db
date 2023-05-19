@@ -35,7 +35,8 @@ const SinglePlayers = ({ player, cart, setCart }) => {
             console.log('acheeeeeee!');
         }
         else {
-            console.log('naiiiiiii');
+            localStorage.setItem('bookmark', JSON.stringify([info]));
+            console.log("naiii")
         }
     };
 
