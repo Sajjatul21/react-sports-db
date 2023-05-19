@@ -1,0 +1,22 @@
+.single-cart {
+    width: 250px;
+    height: 500px;
+    box-shadow: 2px 2px 4px gray;
+    margin: 5px;
+    border-radius: 3px;
+    border: none;
+
+}
+
+.player-img {
+    width: 100%;
+}
+
+.btn-cart {
+    padding: 9px 15px;
+    margin: 5px;
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}

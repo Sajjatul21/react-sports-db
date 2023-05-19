@@ -8,7 +8,7 @@ const Players = ({ players }) => {
         <div>
             <div className='cart-container'>
                 {
-                    players.map(player => <SinglePlayers></SinglePlayers>)
+                    players.map(player => <SinglePlayers player={player} key={player.idPlayer} ></SinglePlayers>)
                 }
             </div>
         </div>
