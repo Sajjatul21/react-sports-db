@@ -5,7 +5,13 @@ const Home = () => {
     const [players, setPlayers] = useState([]);
     const [search, setSearch] = useState('');
     const [cart, setCart] = useState([]);
-    // console.log(search);
+
+    const handleDelete = (id) => {
+        const leftPlayer = cart.filter(pId => pId.idPlayer != id);
+        // console.log(leftPlayer);
+        setCart(leftPlayer);
+    }
+
     useEffect(() => {
         fetch(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=${search}`)
             .then(res => res.json())
@@ -31,7 +37,7 @@ const Home = () => {
                         cart.map(p => (
                             <div className='cart-info-container'>
                                 <li>{p.strPlayer}</li>
-                                <button className='delete-btn'>Delete</button>
+                                <button onClick={() => handleDelete(p.idPlayer)} className='delete-btn'>Delete</button>
                             </div>
                         ))
                     }
