@@ -21,7 +21,7 @@ const SinglePlayers = ({ player, cart, setCart }) => {
         }
     }
     return (
-        <div className='single-cart'>
+        <div className='single-cart' data-aos="zoom-in-up">
             <img className='player-img' src={strCutout} alt="" />
             <h6>Name: {strPlayer}</h6>
             <p>{strDescriptionEN ? strDescriptionEN.slice(0, 60) : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem '}</p>
