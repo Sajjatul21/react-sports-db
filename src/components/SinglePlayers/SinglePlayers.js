@@ -33,6 +33,7 @@ const SinglePlayers = ({ player, cart, setCart }) => {
         const oldBookmark = JSON.parse(previousBookmark);
         if (oldBookmark) {
             console.log('acheeeeeee!');
+            localStorage.setItem('bookmark', JSON.stringify([...oldBookmark, info]));
         }
         else {
             localStorage.setItem('bookmark', JSON.stringify([info]));
