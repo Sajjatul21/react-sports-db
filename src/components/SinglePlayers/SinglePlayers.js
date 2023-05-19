@@ -1,6 +1,6 @@
 import React from 'react';
 import './SinglePlayers.css';
-const SinglePlayers = ({ player }) => {
+const SinglePlayers = ({ player,cart, setCart }) => {
     // console.log(player)`
     const { strNationality, strPlayer, idPlayer, strDescriptionEN, strCutout } = player;
     return (
