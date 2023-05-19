@@ -29,9 +29,11 @@ const SinglePlayers = ({ player, cart, setCart }) => {
             price: 115,
             bookMark: "true"
         };
-        console.log(info);
+        const previousBookmark = localStorage.getItem('bookmark');
+        console.log(JSON.parse(previousBookmark));
+    };
 
-    }
+
     return (
         <div className='single-cart' data-aos="zoom-in-up">
             <img className='player-img' src={strCutout} alt="" />
