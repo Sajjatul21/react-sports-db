@@ -12,9 +12,8 @@ const Home = () => {
             .then(data => setPlayers(data?.player))
 
     }, [search]);
-    // console.log(players);
 
-
+    console.log(cart)
     return (
         <div className='home-container'>
             <div className="left-side">
@@ -28,6 +27,10 @@ const Home = () => {
             <div className="right-side">
                 <div className="cart">
                     <p>This is player Cart</p>
+                    {
+                        cart.map(p => <li>{p.idPlayer}</li>)
+                    }
+
                 </div>
 
             </div>

@@ -1,18 +1,24 @@
 import React from 'react';
 import './SinglePlayers.css';
 const SinglePlayers = ({ player, cart, setCart }) => {
-    // console.log(player)`
     const { strNationality, strPlayer, idPlayer, strDescriptionEN, strCutout } = player;
     const handleAddToCart = () => {
         const info = {
+            idPlayer,
             strPlayer,
             strDescriptionEN,
-            strCutout
+            strCutout,
+            price: 115,
+
         }
-        // console.log(info);
-        const newCart = [info];
-        setCart(newCart);
-        console.log(cart);
+        if (cart?.length) {
+            const newCart = [...cart, info];
+            setCart(newCart);
+            return;
+        }
+        else {
+            setCart([info]);
+        }
     }
     return (
         <div className='single-cart'>
