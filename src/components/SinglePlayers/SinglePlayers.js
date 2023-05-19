@@ -20,6 +20,18 @@ const SinglePlayers = ({ player, cart, setCart }) => {
             setCart([info]);
         }
     }
+    const handleBookmark = () => {
+        const info = {
+            idPlayer,
+            strPlayer,
+            strDescriptionEN,
+            strCutout,
+            price: 115,
+            bookMark: "true"
+        };
+        console.log(info);
+
+    }
     return (
         <div className='single-cart' data-aos="zoom-in-up">
             <img className='player-img' src={strCutout} alt="" />
@@ -28,7 +40,7 @@ const SinglePlayers = ({ player, cart, setCart }) => {
             <div>
                 <button className='btn-cart'>Details</button>
                 <button onClick={handleAddToCart} className='btn-cart'>Add To Cart</button>
-                <button className='btn-cart'>Bookmark</button>
+                <button onClick={handleBookmark} className='btn-cart'>Bookmark</button>
             </div>
         </div>
     );
