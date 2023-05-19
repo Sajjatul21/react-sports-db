@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css'
 import Players from '../Players/Players';
+import { ToastContainer, toast } from 'react-toastify';
+
 const Home = () => {
     const [players, setPlayers] = useState([]);
     const [search, setSearch] = useState('');
     const [cart, setCart] = useState([]);
 
     const handleDelete = (id) => {
-        const leftPlayer = cart.filter(pId => pId.idPlayer != id);
-        // console.log(leftPlayer);
+        const leftPlayer = cart.filter(pId => pId.idPlayer !== id);
+        toast('wow button is delete');
         setCart(leftPlayer);
+        // console.log(leftPlayer);
     }
 
     useEffect(() => {
@@ -19,7 +22,7 @@ const Home = () => {
 
     }, [search]);
 
-    console.log(cart)
+    // console.log(cart)
     return (
         <div className='home-container'>
             <div className="left-side">
@@ -38,6 +41,7 @@ const Home = () => {
                             <div className='cart-info-container'>
                                 <li>{p.strPlayer}</li>
                                 <button onClick={() => handleDelete(p.idPlayer)} className='delete-btn'>Delete</button>
+                                <ToastContainer />
                             </div>
                         ))
                     }
